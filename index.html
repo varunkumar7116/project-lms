@@ -4,62 +4,119 @@
   <meta charset="UTF-8">
   <title>HTML Tags Explained</title>
   <style>
+    /* Global reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
-      margin: 40px;
+      padding: 20px;
+      line-height: 1.6;
     }
+
+    h1 {
+      text-align: center;
+      color: #222;
+      margin-bottom: 30px;
+    }
+
     .tag-section {
       background: #fff;
-      border: 1px solid #ccc;
       border-radius: 10px;
       margin-bottom: 40px;
       padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s ease;
     }
+
+    .tag-section:hover {
+      transform: translateY(-3px);
+    }
+
     .tag-title {
-      font-size: 26px;
+      font-size: 24px;
       font-weight: bold;
       color: #333;
       margin-bottom: 15px;
+      text-align: center;
     }
+
     .tag-info {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 20px;
+      align-items: center;
     }
+
     .tag-image-left,
     .tag-image-right {
       flex: 1;
-      min-width: 200px;
+      min-width: 220px;
+      text-align: center;
     }
+
     .tag-image-left img,
     .tag-image-right img {
       width: 100%;
+      max-width: 280px;
       height: auto;
-      border-radius: 6px;
-      border: 1px solid #999;
+      border-radius: 8px;
+      border: 1px solid #ccc;
       cursor: pointer;
+      transition: transform 0.3s ease;
     }
+
+    .tag-image-left img:hover,
+    .tag-image-right img:hover {
+      transform: scale(1.05);
+    }
+
     .tag-text {
       flex: 2;
-      min-width: 300px;
+      min-width: 280px;
     }
+
     .tag-text p {
-      margin: 10px 0;
+      margin: 12px 0;
+      color: #444;
     }
+
     code {
       background: #eee;
       padding: 4px 6px;
       border-radius: 4px;
-      display: inline-block;
+      font-size: 14px;
     }
+
     pre {
-      background: #eee;
-      padding: 10px;
-      border-radius: 4px;
+      background: #272822;
+      color: #f8f8f2;
+      padding: 12px;
+      border-radius: 6px;
       overflow-x: auto;
+      font-size: 14px;
+      margin: 10px 0;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .tag-info {
+        flex-direction: column;
+        text-align: center;
+      }
+      .tag-text {
+        min-width: 100%;
+      }
+      .tag-image-left img,
+      .tag-image-right img {
+        max-width: 100%;
+      }
     }
   </style>
 </head>
@@ -67,35 +124,26 @@
 
   <h1>HTML Beginner Tags With Visuals</h1>
 
-<!-- Title Tag -->
-<div class="tag-section">
-  <div class="tag-title">&lt;title&gt; Tag</div>
-  <div class="tag-info">
-    
-    <!-- Left Image -->
-    <div class="tag-image-left">
-      <a href="flow of title.png" target="_blank">
-        <img src="flow of title.png" alt="Flowchart for Title Tag">
-      </a>
-    </div>
-
-    <!-- Text Explanation -->
-    <div class="tag-text">
-      <p><strong>Explanation:</strong> The <code>&lt;title&gt;</code> tag defines the title of the HTML document.  
-      It appears in the browser tab, bookmarks, and search engine results.  
-      Each page should have a unique and meaningful title for better user experience and SEO.</p>
-
-      <!-- Syntax -->
-      <p><strong>Syntax:</strong></p>
-      <pre>
+  <!-- Title Tag -->
+  <div class="tag-section">
+    <div class="tag-title">&lt;title&gt; Tag</div>
+    <div class="tag-info">
+      <div class="tag-image-left">
+        <a href="images/flow of title.png" target="_blank">
+          <img src="images/flow of title.png" alt="Flowchart for Title Tag">
+        </a>
+      </div>
+      <div class="tag-text">
+        <p><strong>Explanation:</strong> The <code>&lt;title&gt;</code> tag defines the title of the HTML document.  
+        It appears in the browser tab, bookmarks, and search engine results. Each page should have a unique and meaningful title for better user experience and SEO.</p>
+        <p><strong>Syntax:</strong></p>
+        <pre>
 &lt;head&gt;
   &lt;title&gt;Page Title&lt;/title&gt;
 &lt;/head&gt;
-      </pre>
-
-      <!-- Example -->
-      <p><strong>Example:</strong></p>
-      <pre>
+        </pre>
+        <p><strong>Example:</strong></p>
+        <pre>
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -105,128 +153,125 @@
   &lt;h1&gt;Welcome to My Portfolio&lt;/h1&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-      </pre>
-    </div>
-
-    <!-- Right Image -->
-    <div class="tag-image-right">
-      <a href="example of title.png" target="_blank">
-        <img src="example of title.png" alt="Title Example Animation">
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- P Tag -->
-<div class="tag-section">
-  <div class="tag-title">&lt;p&gt; Tag</div>
-  <div class="tag-info">
-    <div class="tag-image-left">
-      <a href="flow of p tag.png" target="_blank">
-        <img src="flow of p tag.png" alt="Flowchart for Paragraph Tag">
-      </a>
-    </div>
-    <div class="tag-text">
-      <p><strong>Explanation:</strong> The <code>&lt;p&gt;</code> tag defines a paragraph.</p>
-      <p><strong>Syntax:</strong></p>
-      <pre>&lt;p&gt;Your text here&lt;/p&gt;</pre>
-      <p><strong>Example:</strong></p>
-      <pre>&lt;p&gt;This is a simple paragraph.&lt;/p&gt;</pre>
-    </div>
-    <div class="tag-image-right">
-      <a href="example of p tag.png" target="_blank">
-        <img src="example of p tag.png" alt="P Tag Example Animation">
-      </a>
+        </pre>
+      </div>
+      <div class="tag-image-right">
+        <a href="images/example of title.png" target="_blank">
+          <img src="images/example of title.png" alt="Title Example Animation">
+        </a>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- Button Tag -->
-<div class="tag-section">
-  <div class="tag-title">&lt;button&gt; Tag</div>
-  <div class="tag-info">
-    <div class="tag-image-left">
-      <a href="flow og but tag.png" target="_blank">
-        <img src="flow og but tag.png" alt="Flowchart for Button Tag" style="width: 250px;">
-      </a>
+  <!-- P Tag -->
+  <div class="tag-section">
+    <div class="tag-title">&lt;p&gt; Tag</div>
+    <div class="tag-info">
+      <div class="tag-image-left">
+        <a href="images/flow of p tag.png" target="_blank">
+          <img src="images/flow of p tag.png" alt="Flowchart for Paragraph Tag">
+        </a>
+      </div>
+      <div class="tag-text">
+        <p><strong>Explanation:</strong> The <code>&lt;p&gt;</code> tag defines a paragraph.</p>
+        <p><strong>Syntax:</strong></p>
+        <pre>&lt;p&gt;Your text here&lt;/p&gt;</pre>
+        <p><strong>Example:</strong></p>
+        <pre>&lt;p&gt;This is a simple paragraph.&lt;/p&gt;</pre>
+      </div>
+      <div class="tag-image-right">
+        <a href="images/example of p tag.png" target="_blank">
+          <img src="images/example of p tag.png" alt="P Tag Example Animation">
+        </a>
+      </div>
     </div>
-    <div class="tag-text">
-      <p><strong>Explanation:</strong> The <code>&lt;button&gt;</code> tag defines a clickable button on the webpage.</p>
-      <p><strong>Syntax:</strong></p>
-      <pre>&lt;button&gt;Click Me&lt;/button&gt;</pre>
-      <p><strong>Example:</strong></p>
-      <pre>
+  </div>
+
+  <!-- Button Tag -->
+  <div class="tag-section">
+    <div class="tag-title">&lt;button&gt; Tag</div>
+    <div class="tag-info">
+      <div class="tag-image-left">
+        <a href="images/flow og but tag.png" target="_blank">
+          <img src="images/flow og but tag.png" alt="Flowchart for Button Tag">
+        </a>
+      </div>
+      <div class="tag-text">
+        <p><strong>Explanation:</strong> The <code>&lt;button&gt;</code> tag defines a clickable button on the webpage.</p>
+        <p><strong>Syntax:</strong></p>
+        <pre>&lt;button&gt;Click Me&lt;/button&gt;</pre>
+        <p><strong>Example:</strong></p>
+        <pre>
 &lt;button onclick="alert('Hello!')"&gt;
   Click Me
 &lt;/button&gt;
-      </pre>
-    </div>
-    <div class="tag-image-right">
-      <a href="example of but tag.png" target="_blank">
-        <img src="example of but tag.png" alt="Button Tag Example Animation" style="width: 250px;">
-      </a>
+        </pre>
+      </div>
+      <div class="tag-image-right">
+        <a href="images/example of but tag.png" target="_blank">
+          <img src="images/example of but tag.png" alt="Button Tag Example Animation">
+        </a>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- UL Tag -->
-<div class="tag-section">
-  <div class="tag-title">&lt;ul&gt; Tag</div>
-  <div class="tag-info">
-    <div class="tag-image-left">
-      <a href="ul tag flow.JPG" target="_blank">
-        <img src="ul tag flow.JPG" width="700" height="700" alt="Flowchart for UL Tag">
-      </a>
-    </div>
-    <div class="tag-text">
-      <p><strong>Explanation:</strong> The <code>&lt;ul&gt;</code> tag creates a bullet-point list.</p>
-      <p><strong>Syntax:</strong></p>
-      <pre>
+  <!-- UL Tag -->
+  <div class="tag-section">
+    <div class="tag-title">&lt;ul&gt; Tag</div>
+    <div class="tag-info">
+      <div class="tag-image-left">
+        <a href="images/ul tag flow.JPG" target="_blank">
+          <img src="images/ul tag flow.JPG" alt="Flowchart for UL Tag">
+        </a>
+      </div>
+      <div class="tag-text">
+        <p><strong>Explanation:</strong> The <code>&lt;ul&gt;</code> tag creates a bullet-point list.</p>
+        <p><strong>Syntax:</strong></p>
+        <pre>
 &lt;ul&gt;
   &lt;li&gt;Item 1&lt;/li&gt;
   &lt;li&gt;Item 2&lt;/li&gt;
 &lt;/ul&gt;
-      </pre>
-      <p><strong>Example:</strong></p>
-      <pre>
+        </pre>
+        <p><strong>Example:</strong></p>
+        <pre>
 &lt;ul&gt;
   &lt;li&gt;Milk&lt;/li&gt;
   &lt;li&gt;Eggs&lt;/li&gt;
 &lt;/ul&gt;
-      </pre>
-    </div>
-    <div class="tag-image-right">
-      <a href="ul-example.png" target="_blank">
-        <img src="ul-example.png" alt="UL Example Animation">
-      </a>
+        </pre>
+      </div>
+      <div class="tag-image-right">
+        <a href="images/ul-example.png" target="_blank">
+          <img src="images/ul-example.png" alt="UL Example Animation">
+        </a>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- IMG Tag -->
-<div class="tag-section">
-  <div class="tag-title">&lt;img&gt; Tag</div>
-  <div class="tag-info">
-    <div class="tag-image-left">
-      <a href="img tag flow.JPG" target="_blank">
-        <img src="img tag flow.JPG" alt="Flowchart for IMG Tag">
-      </a>
-    </div>
-    <div class="tag-text">
-      <p><strong>Explanation:</strong> The <code>&lt;img&gt;</code> tag displays an image on the page.</p>
-      <p><strong>Syntax:</strong></p>
-      <pre>&lt;img src="image.jpg" alt="Image Description"&gt;</pre>
-      <p><strong>Example:</strong></p>
-      <pre>&lt;img src="cat.jpg" alt="Cute Cat"&gt;</pre>
-    </div>
-    <div class="tag-image-right">
-      <a href="example of img tag.png" target="_blank">
-        <img src="example of img tag.png" alt="IMG Example Animation">
-      </a>
+  <!-- IMG Tag -->
+  <div class="tag-section">
+    <div class="tag-title">&lt;img&gt; Tag</div>
+    <div class="tag-info">
+      <div class="tag-image-left">
+        <a href="images/img tag flow.JPG" target="_blank">
+          <img src="images/img tag flow.JPG" alt="Flowchart for IMG Tag">
+        </a>
+      </div>
+      <div class="tag-text">
+        <p><strong>Explanation:</strong> The <code>&lt;img&gt;</code> tag displays an image on the page.</p>
+        <p><strong>Syntax:</strong></p>
+        <pre>&lt;img src="image.jpg" alt="Image Description"&gt;</pre>
+        <p><strong>Example:</strong></p>
+        <pre>&lt;img src="cat.jpg" alt="Cute Cat"&gt;</pre>
+      </div>
+      <div class="tag-image-right">
+        <a href="images/example of img tag.png" target="_blank">
+          <img src="images/example of img tag.png" alt="IMG Example Animation">
+        </a>
+      </div>
     </div>
   </div>
-</div>
 
 </body>
 </html>
-
